@@ -16,7 +16,7 @@ interface User {
 })
 export class AppComponent implements OnInit {
   http = inject(HttpClient);
-  title = 'client';
+  title = 'DatingApp';
   users: User[] = [];
 
   ngOnInit(): void {

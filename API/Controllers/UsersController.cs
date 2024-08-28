@@ -1,12 +1,16 @@
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
+// If you AllowAnonymous at top level you can't override it for particular cases
+// You can override Authorize
 public class UsersController(DataContext context) : BaseApiController
 {
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
     {
@@ -15,6 +19,7 @@ public class UsersController(DataContext context) : BaseApiController
         return users;
     }
 
+    [Authorize]
     [HttpGet("{id:int}")] // /api/users/2
     public async Task<ActionResult<AppUser>> GetUser(int id)
     {

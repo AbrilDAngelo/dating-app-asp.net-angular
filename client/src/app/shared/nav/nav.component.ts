@@ -1,18 +1,23 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AccountService } from '@services';
+import { Router, RouterLink } from '@angular/router';
 import { MenuItem, UserLoginData } from '@interfaces';
+import { AccountService } from '@services';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [FormsModule, BsDropdownModule],
+  imports: [CommonModule, FormsModule, BsDropdownModule, RouterLink],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
 })
 export class NavComponent {
   accountService = inject(AccountService);
+  private _router = inject(Router);
+  private _toastrService = inject(ToastrService);
 
   userLoginData: UserLoginData = {
     username: '',
@@ -22,15 +27,15 @@ export class NavComponent {
   menuItems: MenuItem[] = [
     {
       name: 'Matches',
-      link: '',
+      link: '/members',
     },
     {
       name: 'Lists',
-      link: '',
+      link: '/lists',
     },
     {
       name: 'Messages',
-      link: '',
+      link: '/messages',
     },
     // {
     //   name: 'Logout',
@@ -41,10 +46,8 @@ export class NavComponent {
 
   login() {
     this.accountService.login(this.userLoginData).subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error: (error) => console.log(error),
+      next: () => this._router.navigateByUrl('/members'),
+      error: (error) => this._toastrService.error(error.error),
     });
   }
 

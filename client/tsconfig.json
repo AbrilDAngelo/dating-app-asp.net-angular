@@ -38,6 +38,9 @@
       ],
       "@services": [
         "./src/app/services/index.ts",
+      ],
+      "@guards": [
+        "./src/app/guards/index.ts",
       ]
     }
   },

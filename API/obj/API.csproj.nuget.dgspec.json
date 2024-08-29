@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\api\\API.csproj": {}
+    "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\api\\API.csproj": {
+    "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\api\\API.csproj",
+        "projectUniqueName": "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\api\\API.csproj",
+        "projectPath": "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Abril\\.nuget\\packages\\",
-        "outputPath": "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\api\\obj\\",
+        "outputPath": "D:\\programacion\\3. Cursos\\Build an app with ASP.NET Core and Angular\\DatingApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Abril\\AppData\\Roaming\\NuGet\\NuGet.Config",

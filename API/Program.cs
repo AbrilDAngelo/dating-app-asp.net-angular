@@ -8,14 +8,15 @@ builder.Services.AddIdentityServices(builder.Configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Middleware
+// Middleware have to follow a specific order to work
+// Configure the HTTP request pipeline
 app.UseCors(x =>
     x.AllowAnyHeader()
         .AllowAnyMethod()
         .WithOrigins("http://localhost:4200", "https://localhost:4200")
 );
 
-// Middleware have to follow a specific order to work
 app.UseAuthentication();
 app.UseAuthorization();
 

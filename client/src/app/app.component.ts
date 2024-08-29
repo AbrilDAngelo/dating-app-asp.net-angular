@@ -1,30 +1,29 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavComponent } from "./nav/nav.component";
-
-interface User {
-  id: number,
-  userName: string
-}
+import { HomeComponent } from '@pages';
+import { AccountService } from '@services';
+import { NavComponent } from '@shared';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavComponent],
+  imports: [RouterOutlet, NavComponent, HomeComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  http = inject(HttpClient);
+  private _accountService = inject(AccountService);
   title = 'DatingApp';
-  users: User[] = [];
 
   ngOnInit(): void {
-    this.http.get<User[]>('https://localhost:5001/api/users').subscribe({
-      next: (response: User[]) => {this.users = response},
-      error: error => console.error(error),
-      complete: () => console.log('Request completed')
-    })
+    this.setCurrentUser();
   }
+
+  setCurrentUser() {
+    const userString = localStorage.getItem('user');
+    if (!userString) return;
+    const user = JSON.parse(userString);
+    this._accountService.currentUser.set(user);
+  }
+
 }

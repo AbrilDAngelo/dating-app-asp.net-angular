@@ -24,6 +24,15 @@
       "dom"
     ],
     "paths": {
+      "@shared": [
+        "./src/app/shared/index.ts"
+      ],
+      "@pages": [
+        "./src/app/pages/index.ts"
+      ],
+      "@components": [
+        "./src/app/components/index.ts"
+      ],
       "@interfaces": [
         "./src/app/interfaces/index.ts"
       ],

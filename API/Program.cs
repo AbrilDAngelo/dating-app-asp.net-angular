@@ -1,4 +1,5 @@
 using API.Extensions;
+using API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ var app = builder.Build();
 // Middleware
 // Middleware have to follow a specific order to work
 // Configure the HTTP request pipeline
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors(x =>
     x.AllowAnyHeader()
         .AllowAnyMethod()

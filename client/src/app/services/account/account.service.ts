@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { User, UserLoginData, UserRegisterData } from '@interfaces';
+import {
+  User,
+  UserAuthResponse,
+  UserLoginData,
+  UserRegisterData,
+} from '@interfaces';
 import { map } from 'rxjs';
 
 @Injectable({
@@ -9,11 +14,11 @@ import { map } from 'rxjs';
 export class AccountService {
   private http = inject(HttpClient);
   baseUrl = 'http://localhost:5000/api/';
-  currentUser = signal<User | null>(null);
+  currentUser = signal<UserAuthResponse | null>(null);
 
   login(userLoginData: UserLoginData) {
     return this.http
-      .post<User>(this.baseUrl + 'account/login', userLoginData)
+      .post<UserAuthResponse>(this.baseUrl + 'account/login', userLoginData)
       .pipe(
         map((user) => {
           if (user) {
@@ -31,7 +36,10 @@ export class AccountService {
 
   register(userRegisterData: UserRegisterData) {
     return this.http
-      .post<User>(this.baseUrl + 'account/register', userRegisterData)
+      .post<UserAuthResponse>(
+        this.baseUrl + 'account/register',
+        userRegisterData
+      )
       .pipe(
         map((user) => {
           if (user) {

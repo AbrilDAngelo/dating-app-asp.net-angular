@@ -1,11 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import {
-  User,
-  UserAuthResponse,
-  UserLoginData,
-  UserRegisterData,
-} from '@interfaces';
+import { UserAuthResponse, UserLoginData, UserRegisterData } from '../../_interfaces';
 import { map } from 'rxjs';
 
 @Injectable({

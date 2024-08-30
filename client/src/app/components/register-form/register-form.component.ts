@@ -1,6 +1,6 @@
 import { Component, inject, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { User, UserRegisterData } from '@interfaces';
+import { User, UserRegisterData } from '../../_interfaces';
 import { AccountService } from '@services';
 import { ToastrService } from 'ngx-toastr';
 

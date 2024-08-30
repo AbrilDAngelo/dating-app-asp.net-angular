@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { authGuard } from '@guards';
+import { authGuard } from './_guards';
 import {
   HomeComponent,
   ListsComponent,

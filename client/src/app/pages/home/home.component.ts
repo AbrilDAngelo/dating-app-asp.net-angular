@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { RegisterFormComponent } from '@components';
-import { User } from '@interfaces';
+import { UserResponse } from '../../_interfaces';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,7 @@ import { User } from '@interfaces';
 export class HomeComponent implements OnInit {
   http = inject(HttpClient);
 
-  users: User[] = [];
+  users: UserResponse[] = [];
   registerMode = false;
 
   ngOnInit(): void {
@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit {
   }
 
   getUsers(): void {
-    this.http.get<User[]>('https://localhost:5001/api/users').subscribe({
-      next: (response: User[]) => {
+    this.http.get<UserResponse[]>('https://localhost:5001/api/users').subscribe({
+      next: (response: UserResponse[]) => {
         this.users = response;
         console.log('USERS', this.users);
       },

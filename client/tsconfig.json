@@ -34,13 +34,16 @@
         "./src/app/components/index.ts"
       ],
       "@interfaces": [
-        "./src/app/interfaces/index.ts"
+        "./src/app/_interfaces/index.ts"
       ],
       "@services": [
-        "./src/app/services/index.ts",
+        "./src/app/_services/index.ts",
       ],
       "@guards": [
-        "./src/app/guards/index.ts",
+        "./src/app/_guards/index.ts",
+      ],
+      "@interceptors": [
+        "./src/app/_interceptors/index.ts",
       ]
     }
   },

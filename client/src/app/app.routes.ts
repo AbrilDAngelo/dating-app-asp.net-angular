@@ -6,6 +6,8 @@ import {
   MemberDetailComponent,
   MemberListComponent,
   MessagesComponent,
+  NotFoundComponent,
+  ServerErrorComponent,
 } from '@pages';
 
 export const routes: Routes = [
@@ -34,7 +36,8 @@ export const routes: Routes = [
       },
     ],
   },
-
+  { path: 'not-found', component: NotFoundComponent },
+  { path: 'server-error', component: ServerErrorComponent },
   {
     path: '**',
     component: HomeComponent,

@@ -20,25 +20,26 @@ public class AccountController(DataContext context, ITokenService tokenService) 
         Hash-based Message Authentication Code (HMAC) is a message 
         encryption method that uses a cryptographic key in conjunction with a hash function
         */
-        using var hmac = new HMACSHA512();
+        // using var hmac = new HMACSHA512();
 
-        var user = new AppUser
-        {
-            UserName = registerDto.Username.ToLower(),
-            // Create a byte array from the password to pass as argument
-            PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-            PasswordSalt = hmac.Key
-        };
+        // var user = new AppUser
+        // {
+        //     UserName = registerDto.Username.ToLower(),
+        //     // Create a byte array from the password to pass as argument
+        //     PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
+        //     PasswordSalt = hmac.Key
+        // };
 
-        context.Users.Add(user);
-        // Save changes to the database
-        await context.SaveChangesAsync();
+        // context.Users.Add(user);
+        // // Save changes to the database
+        // await context.SaveChangesAsync();
 
-        return new UserDto
-        {
-            Username = user.UserName,
-            Token = tokenService.CreateToken(user)
-        };
+        // return new UserDto
+        // {
+        //     Username = user.UserName,
+        //     Token = tokenService.CreateToken(user)
+        // };
+        return Ok();
     }
 
     [HttpPost("login")]

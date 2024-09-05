@@ -134,3 +134,4 @@ D:\programacion\3. Cursos\Build an app with ASP.NET Core and Angular\DatingApp\a
 D:\programacion\3. Cursos\Build an app with ASP.NET Core and Angular\DatingApp\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\programacion\3. Cursos\Build an app with ASP.NET Core and Angular\DatingApp\api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 D:\programacion\3. Cursos\Build an app with ASP.NET Core and Angular\DatingApp\api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\programacion\3. Cursos\Build an app with ASP.NET Core and Angular\DatingApp\API\bin\Debug\net8.0\Data\UserSeedData.json
